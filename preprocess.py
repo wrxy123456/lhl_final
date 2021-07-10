@@ -37,10 +37,11 @@ def preprocess(doc):
     # Remove stopwords
     doc = [token for token in doc if not token in stop_words]
     
+    # Lemmatize the documents
+    doc = lemmatize(doc)
+    
     # Remove words that are only one character.
     doc = [token for token in doc if len(token) > 1]
     
-    # Lemmatize the documents
-    doc = lemmatize(doc)
     
     return doc
